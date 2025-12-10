@@ -1,5 +1,6 @@
 def call() {
   stage('Quality Gate'){
+    //must create the weebhook in sonarqube server first
     timeout(time: 1, unit: 'HOURS') {
         def qg = waitForQualityGate()
         if (qg.status != 'OK') {
